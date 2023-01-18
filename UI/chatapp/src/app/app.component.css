@@ -1,0 +1,42 @@
+.container {
+    max-width: 25%;
+    width: 25%;
+    float: left;
+    height: 100vh;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    overflow: scroll;
+}
+
+.middle-container{
+    max-width: 50%;
+    width: 50%;
+    float: left;
+    height: 100vh;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    overflow: scroll;  
+}
+
+.middle-container{
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.container{
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.container::-webkit-scrollbar{
+    display: none;
+}
+
+.middle-container::-webkit-scrollbar{
+    display: none;
+}
+

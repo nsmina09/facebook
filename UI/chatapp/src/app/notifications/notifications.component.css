@@ -1,0 +1,47 @@
+.each-notification {
+    width: 80%;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px;
+    border: solid 1px grey;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+.avatar {
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    background-color: #3B5998;
+}
+
+p {
+    text-align: start;
+    font-size: smaller;
+    font-weight: normal;
+    margin-left: 50px;
+    width: 60%;
+}
+
+.date {
+    margin-top: 0px;
+    font-size: smaller;
+    color: teal;
+    margin: auto;
+}
+
+.avatar-desc {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.indicator {
+    height: 20px;
+    width: 20px;
+}
+
+.confirm-button{
+color: white;
+background-color: #3B5998;
+}

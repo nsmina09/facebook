@@ -1,0 +1,8 @@
+<app-header *ngIf="header"></app-header>
+<div class="wrap ">
+    <div class="container"><app-user-list *ngIf="header"></app-user-list></div>
+    <div class="middle-container"><router-outlet></router-outlet></div>
+    <div class="container"><app-side-buttons *ngIf="header"></app-side-buttons></div>
+</div>
+
+

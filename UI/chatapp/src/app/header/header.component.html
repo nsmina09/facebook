@@ -1,0 +1,37 @@
+<div class="header w-100 d-flex ">
+    <div class="side-search-bar w-25">
+        <div class="avatar">
+            <img class="avatar"
+                src="data:image/png;base64,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"
+                alt="app-logo">
+        </div>
+        <input (keyup)="search($event)" class="input-search  ms-1 ps-2" type="text" placeholder="Search User">
+    </div>
+    <div class="middle-section w-50">
+        <a routerLinkActive="active" routerLink="/home/home-feed"><i
+                class="fa-sharp icons fa-solid fa-house text-secondary icon"></i></a>
+        <a routerLinkActive="active" routerLink="/notifications"><i
+                class="fa-sharp icons fa-solid fa-bell text-secondary"></i></a>
+        <a routerLinkActive="active" routerLink="/messages"><i
+                class="fa-sharp icons fa-solid fa-comments text-secondary"></i></a>
+        <!-- <a routerLinkActive="active"><i class="fa-sharp fa-solid fa-user-group text-secondary"></i></a>
+        <a routerLinkActive="active"><i class="fa-sharp fa-solid fa-shop text-secondary"></i></a> -->
+
+    </div>
+    <div class="last-section w-25">
+        <div class="icon-avatar me-1 text-center">
+            <a (click)="logout()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="30" fill="#3B5998"
+                    class="bi bi-box-arrow-right " viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+                    <path fill-rule="evenodd"
+                        d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                </svg>
+            </a>
+        </div>
+        <a (click)="gotoMyProfile()">
+            <div class="avatar"></div>
+        </a>
+    </div>
+</div>

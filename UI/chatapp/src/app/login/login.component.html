@@ -1,0 +1,32 @@
+<div class="row mt-5">
+  <div class="col-6 mt-5">
+    <div class="text-start ">
+      <img class="" id="logo-img"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7daRse6rLr0177ExAQGHyvk2bdcHijpNabA&usqp=CAU"
+        alt="chatapp">
+      <div class="fs-5 me-4">
+        We helps you connect and share with the people in your life.
+      </div>
+    </div>
+  </div>
+  <div class="col-6 ">
+    <div class="card-div text-center card p-4">
+      <form action="">
+        <input class="my-3 w-100" type="text" placeholder=" Username" [(ngModel)]="username" name="username">
+        <br>
+        <input class="my-3 w-100" type="password" placeholder="password" [(ngModel)]="password" name="password">
+        <br>
+        <div *ngIf="errormessage" role="alert" class="text-danger alert alert-danger">{{errormessage}}</div>
+        <a mat-stroked-button class="my-3 login w-100 btn btn-outline" 
+          (click)="login()">Login</a>
+        <a class="text-decoration-none link" href="">Forgotten password?</a>
+        <br>
+        <button type="button" routerLink="/register"
+          class="my-3 newac  btn btn-outline">Create New Account</button>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+

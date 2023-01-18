@@ -1,0 +1,49 @@
+#logo-img{
+    height: 80px;
+    width: 60%;
+    margin-top: 20%; 
+}
+
+.card-div{
+   margin-top: 25%;
+}
+
+.login{
+   background-color: #3B5998;
+   color: white;
+}
+
+.newac{
+   background-color: #36A420;
+   color: white;
+   height: auto;
+}
+
+input{
+   height: 50px;
+   border-radius: 5px;
+   border: rgb(180, 178, 178) 1px solid;
+   padding-left: 10px;
+}
+
+.alink{
+   color: black;
+   font-weight: bolder;
+}
+
+body {
+    background-color: #F0F2F5;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    height: 100%;
+}
+
+.link{
+   color: #3B5998;
+}
+
+.submit-button {
+   background-color: #36A420;
+   color: white;
+   height: auto;
+}

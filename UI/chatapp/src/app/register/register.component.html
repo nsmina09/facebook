@@ -1,0 +1,118 @@
+<section class="register p-4">
+    <div class="text-start text-dark header ">
+        <h3>Sign Up</h3>
+        <p class="text-secondary">Its quick and easy</p>
+    </div>
+    <div class="body text-center">
+        <form [formGroup]="registerForm">
+            <!-- fullname -->
+
+            <input
+                [style]="this.registerForm.get('fullname')?.errors && this.registerForm.get('fullname')?.touched? 'border: red solid 1px;border-radius:10px':'border:grey solid 1px;border-radius:10px'"
+                class="user-name d-flex text-start w-100" type="text" placeholder="Fullname" formControlName="fullname"
+                name="fullname">
+
+            <div class="text-danger text-start"
+                *ngIf="this.registerForm.get('fullname')?.errors && this.registerForm.get('fullname')?.touched">
+                Please
+                enter a valid name</div>
+
+            <!-- username -->
+
+            <input
+                [style]="this.registerForm.get('username')?.errors && this.registerForm.get('username')?.touched? 'border: red solid 1px;border-radius:10px':'border:grey solid 1px;border-radius:10px'"
+                class="user-name mt-4 d-flex text-start w-100" type="text" placeholder="Username"
+                formControlName="username" name="username">
+
+            <div class="text-danger text-start"
+                *ngIf="this.registerForm.get('username')?.errors && this.registerForm.get('username')?.touched">
+                Please
+                enter a valid username</div>
+
+            <!-- gender -->
+
+            <div class="d-flex text-start mt-3 align-items-center form-check justify-content-center">
+
+                <div [style]="this.registerForm.get('gender')?.errors && this.registerForm.get('gender')?.touched? 'border: red solid 1px;border-radius:10px':'border:grey solid 1px;border-radius:10px'"
+                    class=" d-flex align-items-center px-2">
+                    <div class="text-secondary me-2">Female</div>
+                    <input type="radio" value="female" name="gender" formControlName="gender">
+                </div>
+
+                <div [style]="this.registerForm.get('gender')?.errors && this.registerForm.get('gender')?.touched? 'border: red solid 1px;border-radius:10px':'border:grey solid 1px;border-radius:10px'"
+                    class=" d-flex align-items-center px-2 mx-2">
+                    <div class="text-secondary me-2">Male</div>
+                    <input type="radio" value="male" name="gender" formControlName="gender">
+                </div>
+
+                <div [style]="this.registerForm.get('gender')?.errors && this.registerForm.get('gender')?.touched? 'border: red solid 1px;border-radius:10px':'border:grey solid 1px;border-radius:10px'"
+                    class=" d-flex align-items-center px-2 ">
+                    <div class="text-secondary me-2">Custom</div>
+                    <input type="radio" value="custom" name="gender" formControlName="gender">
+                </div>
+
+            </div>
+
+            <div class="text-danger text-center"
+                *ngIf="this.registerForm.get('gender')?.errors && this.registerForm.get('gender')?.touched">
+                Please
+                select your gender</div>
+
+            <!-- birthday -->
+
+            <div class="text-start mt-4 text-secondary">Birthday</div>
+            <input
+                [style]="this.registerForm.get('birthday')?.errors && this.registerForm.get('birthday')?.touched? 'border: red solid 1px;border-radius:10px':'border:grey solid 1px;border-radius:10px'"
+                class="d-flex justify-content-start mt-1" type="date" formControlName="birthday" name="date"
+                [max]="getmax()">
+
+            <div class="text-danger text-start"
+                *ngIf="this.registerForm.get('birthday')?.errors && this.registerForm.get('birthday')?.touched">
+                Please
+                select your birth date</div>
+
+            <!-- phone number and password-->
+
+            <div class="phone-password my-3">
+
+                <input
+                    [style]="this.registerForm.get('phoneNumber')?.errors && this.registerForm.get('phoneNumber')?.touched? 'border: red solid 1px;border-radius:10px':'border:grey solid 1px;border-radius:10px'"
+                    class="user-name w-100 mt-3" type="text" placeholder="Mobile number" name="phoneNumber"
+                    formControlName="phoneNumber">
+
+                <div class="text-danger text-start "
+                    *ngIf="this.registerForm.get('phoneNumber')?.errors && this.registerForm.get('phoneNumber')?.touched">
+                    Please enter your phone number</div>
+
+                <input
+                    [style]="this.registerForm.get('password')?.errors && this.registerForm.get('password')?.touched? 'border: red solid 1px;border-radius:10px':'border:grey solid 1px;border-radius:10px'"
+                    class="user-name w-100 mt-3" type="text" placeholder="Password" name="password"
+                    formControlName="password">
+
+                <div class="text-danger text-start"
+                    *ngIf="this.registerForm.get('password')?.errors && this.registerForm.get('password')?.touched ">
+                    Please enter a password</div>
+
+            </div>
+
+
+            <p class="text-secondary para text-start">
+                People who use our service may have uploaded your contact information to Facebook.<span><a
+                        class="text-primary text-decoration-none" href=""> Learn more</a></span>.</p>
+
+
+            <p class="text-secondary para text-start"> By clicking Sign Up, you agree to our Terms, <span><a
+                        class="text-decoration-none text-primary" href="">Privacy
+                        Policy</a></span> and <span><a class="text-decoration-none text-primary" href="">Cookies
+                        Policy</a></span>. You may
+                receive SMS
+                notifications from us and can opt out at any time.
+            </p>
+            <div class="text-danger alert alert-danger" role="alert" *ngIf="errormessage">Please fill all the fields</div>
+
+            <button class="btn btn-outline-success" (click)="submit()">Submit</button>
+        </form>
+    </div>
+
+
+</section>

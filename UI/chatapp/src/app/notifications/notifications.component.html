@@ -1,0 +1,19 @@
+<div class="text-center m-5" *ngIf="notification.length==0">No notifications for you</div>
+
+<div *ngFor="let not of notification">
+    <a class="text-decoration-none text-dark" >
+        <div class="each-notification">
+            <div class="avatar-desc">
+                <div class="avatar"></div>
+                <p>{{not.message}}</p>
+                <div class=" d-flex justify-content-end">
+                    <button (click)="delete(not)" class=" confirm-button btn btn-outline mx-2 bg-secondary">Delete</button>
+                    <button (click)="confirm(not)" class=" confirm-button btn btn-outline">Confirm</button>
+                </div>
+                <!-- <div [style]="isOpened?'background-color:none':'background-color:green'" class="text-light rounded-circle text-center  count indicator"></div> -->
+            </div>
+            <div class="date">{{not.date | date:'mediumDate'}}</div>
+        </div>
+    
+    </a>
+</div>

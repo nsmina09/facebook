@@ -1,0 +1,126 @@
+<div class="text-center" *ngIf="profileerror">{{profileerror}}</div>
+
+<div class="row  m-5 cover-foto" *ngIf="profileerror==''">
+    <!-- cover pic profile pic name  bio and add friend message buttons -->
+    <img class="cover-img" [src]="coverPic?coverPic:'none'" alt="cover">
+
+    <div class="avatar" [style.background-image]="profilePic?profilePic:'none'"></div>
+
+    <div class="details-div w-100">
+        <div class="w-100 name text-center ">{{otheruserfullname}}</div>
+    </div>
+
+    <div class=" text-center">
+        <div class="text-secondary fs-6">{{bio}}</div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mt-4">
+        <button *ngIf="!isAlreadyFriend" (click)="addfriend()" class="btn btn-outline addfriend-button mx-3">Add
+            Friend</button>
+        <button class="btn btn-outline addfriend-button mx-3" routerLink="/each-message">Messsage</button>
+    </div>
+
+    <!-- profile info section -->
+    <div class="info text-start">
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                class="bi bi-mortarboard-fill text-secondary me-1" viewBox="0 0 16 16">
+                <path
+                    d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z" />
+                <path
+                    d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z" />
+            </svg>
+            Studied at <b>{{collage}}</b>
+        </div>
+        <div class="mt-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                class="bi bi-mortarboard-fill text-secondary me-1" viewBox="0 0 16 16">
+                <path
+                    d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z" />
+                <path
+                    d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z" />
+            </svg>
+            Went to <b>{{school}}</b>
+        </div>
+        <div class="mt-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                class="bi bi-houses text-secondary me-1" viewBox="0 0 16 16">
+                <path
+                    d="M5.793 1a1 1 0 0 1 1.414 0l.647.646a.5.5 0 1 1-.708.708L6.5 1.707 2 6.207V12.5a.5.5 0 0 0 .5.5.5.5 0 0 1 0 1A1.5 1.5 0 0 1 1 12.5V7.207l-.146.147a.5.5 0 0 1-.708-.708L5.793 1Zm3 1a1 1 0 0 1 1.414 0L12 3.793V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3.293l1.854 1.853a.5.5 0 0 1-.708.708L15 8.207V13.5a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 4 13.5V8.207l-.146.147a.5.5 0 1 1-.708-.708L8.793 2Zm.707.707L5 7.207V13.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5V7.207l-4.5-4.5Z" />
+            </svg>
+            Lives in <b>{{place}}</b>
+        </div>
+        <div class="mt-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                class="bi bi-balloon-heart-fill text-secondary me-1" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M8.49 10.92C19.412 3.382 11.28-2.387 8 .986 4.719-2.387-3.413 3.382 7.51 10.92l-.234.468a.25.25 0 1 0 .448.224l.04-.08c.009.17.024.315.051.45.068.344.208.622.448 1.102l.013.028c.212.422.182.85.05 1.246-.135.402-.366.751-.534 1.003a.25.25 0 0 0 .416.278l.004-.007c.166-.248.431-.646.588-1.115.16-.479.212-1.051-.076-1.629-.258-.515-.365-.732-.419-1.004a2.376 2.376 0 0 1-.037-.289l.008.017a.25.25 0 1 0 .448-.224l-.235-.468ZM6.726 1.269c-1.167-.61-2.8-.142-3.454 1.135-.237.463-.36 1.08-.202 1.85.055.27.467.197.527-.071.285-1.256 1.177-2.462 2.989-2.528.234-.008.348-.278.14-.386Z" />
+            </svg>
+            {{maritalStatus}}
+        </div>
+        <div class="mt-2">
+            <a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                    class="bi bi-three-dots text-secondary me-1" viewBox="0 0 16 16">
+                    <path
+                        d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                </svg>
+            </a>
+            See {{otheruserfullname}}'s about info
+        </div>
+    </div>
+
+    <hr class="mt-5">
+    <!-- friends -->
+    <div class="friends-list">
+        <div class="heading mb-4">Friends</div>
+        <div class="text-center error-message" *ngIf="emptyFriendError">{{otheruserfullname}} don't have any friends
+        </div>
+        <div class="each-friend" *ngFor="let friend of friends">
+            <div class=" friend-div">
+                <img class="friend-img" [src]="friend.imageurl?friend.imageUrl:'none'" [alt]="friend.fullname">
+            </div>
+            <div class="text-center friend-name">{{friend.fullname}}</div>
+        </div>
+    </div>
+
+    <hr class="mt-5">
+    <!-- post field -->
+    <div class="text-center m-5" *ngIf="posterror">{{posterror}}</div>
+    <div>
+        <div class=" mt-5" *ngFor="let post of otherspostlist">
+            <div class="card main-card">
+                <a class="text-decoration-none" >
+                    <div class="user-details-card ">
+                        <div class="avatar-card d-flex ">
+                            <div class="avatar-in-post "></div>
+                            <div class="postname ms-2">{{currentUser.fullname}}</div>
+                        </div>
+                        <div class="date">{{post.dateofPost | date:'mediumDate'}}</div>
+                    </div>
+                </a>
+                <div class="post-details">{{post.posttext}}</div>
+                <img [src]="post.imageurl" class="card-img-top" alt="...">
+                <div class="card-body d-flex ">
+                    <div class="last-icon-class">
+                        <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#3B5998"
+                                class="bi bi-heart" viewBox="0 0 16 16">
+                                <path
+                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+                            </svg></a>
+                        <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#3B5998"
+                                class="bi bi-chat-left ms-3" viewBox="0 0 16 16">
+                                <path
+                                    d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                            </svg></a>
+                    </div>
+                    <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#3B5998"
+                            class="bi bi-share" viewBox="0 0 16 16">
+                            <path
+                                d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z" />
+                        </svg></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

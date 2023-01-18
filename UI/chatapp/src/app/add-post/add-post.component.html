@@ -1,0 +1,21 @@
+<div class="d-flex align-items-center">
+    <div class="avatar"></div>
+    <div class="name">{{myname}}</div>
+</div>
+<textarea (change)="getText($event)" class="input" type="text" placeholder="Write Something" name="" id="" cols="30"
+    rows="10" [(ngModel)]="postText"></textarea>
+<!-- <a class="text-decoration-none d-flex align-items-center "> -->
+
+<label for="inputTag">
+    <div class="d-flex align-items-end"> 
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+            fill="currentColor" class="bi bi-image-alt text-secondary mt-2" viewBox="0 0 16 16">
+            <path
+                d="M7 2.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zm4.225 4.053a.5.5 0 0 0-.577.093l-3.71 4.71-2.66-2.772a.5.5 0 0 0-.63.062L.002 13v2a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4.5l-4.777-3.947z" />
+        </svg>
+        <div class="text-dark ms-2">Add Photo</div>
+    </div>
+    <input id="inputTag" class="mt-3" #imageInput type="file" accept="image/*" (change)="processFile(imageInput.value)">
+</label>
+
+<!-- </a> -->

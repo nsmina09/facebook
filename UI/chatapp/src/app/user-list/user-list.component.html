@@ -1,0 +1,27 @@
+<div class="row mt-5">
+    <div class="col-6">
+        <a class="text-decoration-none text-dark" (click)="gotoMyProfile()">
+            <div class="eash-user-div">
+                <div class="avatar position-relative">
+                    <span class="is-active-indicator" style="display:visible">
+                        <span class="visually-hidden">New alerts</span>
+                    </span>
+                </div>
+                <div class="name ms-2">You</div>
+            </div>
+        </a>
+        <a *ngFor="let user of userlist | filter :searchTerm:'fullname'" class="text-decoration-none text-dark"
+            (click)="getOtherUserInfo(user)">
+            <div class="eash-user-div">
+                <div class="avatar position-relative">
+                    <span class="is-active-indicator" [style]="user.islogged?'display:visible':'display:none'">
+                        <span class="visually-hidden">New alerts</span>
+                    </span>
+                </div>
+                <div class="name ms-2">{{user.fullname}}</div>
+            </div>
+        </a>
+    </div>
+    <div class="col-3"></div>
+    <div class="col-3"></div>
+</div>

@@ -1,0 +1,24 @@
+.user-name {
+    padding-left: 2px;
+    border: gray 1px solid;
+}
+
+
+
+.para {
+    font-size: .8rem;
+}
+
+input {
+    height: 40px;
+    border-radius: 5px;
+    border: rgb(180, 178, 178) 1px solid;
+    padding-left: 10px;
+}
+
+.register{
+    background-color: white;
+    border: 1px solid grey;
+  border-radius: 10px;
+  margin-top: 20px;
+}
