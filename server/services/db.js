@@ -29,13 +29,16 @@ const Post = mongoose.model('Post', {
 });
 
 const Allpost = mongoose.model('Allpost', {
+    id:Number,
     fullname: String,
     dateofPost: Date,
     username: String,
     postText: String,
-    PostImage: String
+    PostImage: String,
+    comments:[]
 });
 const Notification = mongoose.model('Notification', {
+    id:Number,
     username: String,
     fromusername: String,
     fullname: String,

@@ -166,3 +166,19 @@ app.post('/check-friend', (req, res) => {
             res.status(result.statusCode).json(result)
         })
 })
+
+app.post('/add-comment', (req, res) => {
+    dataservice.addComment(
+        req.body.id,
+        req.body.fullname,
+        req.body.comment,
+    ).then(result => {
+        res.status(result.statusCode).json(result)
+    })
+})
+
+app.get('/get-comment/:id', (req, res) => {
+    dataservice.getcomments(req.params.id).then(result => {
+        res.status(result.statusCode).json(result)
+    })
+})

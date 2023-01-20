@@ -130,13 +130,26 @@ export class DataService {
     return this.http.get('http://localhost:3000/get-info/' + username);
   }
 
-  alreadyFriend(username: any, fullname: any, otheruser: any){
+  alreadyFriend(username: any, fullname: any, otheruser: any) {
     let data = {
       username: username,
       fullname: fullname,
       otheruser: otheruser
     }
     return this.http.post('http://localhost:3000/check-friend', data)
+  }
+
+  addComment(id: any, fullname: any, comment: any) {
+    let data = {
+      id: id,
+      fullname: fullname,
+      comment: comment
+    }
+    return this.http.post('http://localhost:3000/add-comment', data)
+  }
+
+  getcomments(id: any) {
+    return this.http.get('http://localhost:3000/get-comment/' + id)
   }
 
 }

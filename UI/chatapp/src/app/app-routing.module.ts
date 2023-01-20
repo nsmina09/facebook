@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddPostComponent } from './add-post/add-post.component';
+import { CommentsComponent } from './comments/comments.component';
 import { EachMessageComponent } from './each-message/each-message.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { LoginComponent } from './login/login.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'edit-profile', component: EditProfileComponent },
   { path: 'add-post', component: AddPostComponent },
   { path: 'more-info', component: MoreInfoComponent },
+  { path: 'comments', component: CommentsComponent },
    { path: '**', component: PageNotFoundComponent },
 
 ];

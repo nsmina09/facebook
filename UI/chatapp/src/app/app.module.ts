@@ -20,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 import { FilterPipe } from './pipes/filter.pipe';
 import { MoreInfoComponent } from './more-info/more-info.component';
+import { CommentsComponent } from './comments/comments.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { MoreInfoComponent } from './more-info/more-info.component';
     AddPostComponent,
     FilterPipe,
     MoreInfoComponent,
+    CommentsComponent,
 
   ],
   imports: [

@@ -4,6 +4,7 @@
     border-radius: 10px;
     width: 80%;
     position: relative;
+    margin-left: 20px;
 }
 
 .cover-img {
@@ -163,4 +164,8 @@ img {
     font-size: medium;
     color: #3B5998;
     font-weight: bold;
+}
+
+.m-top{
+    margin-top: 100px;
 }

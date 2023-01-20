@@ -11,11 +11,17 @@
         <a routerLinkActive="active" routerLink="/home/home-feed"><i
                 class="fa-sharp icons fa-solid fa-house text-secondary icon"></i></a>
         <a routerLinkActive="active" routerLink="/notifications"><i
-                class="fa-sharp icons fa-solid fa-bell text-secondary"></i></a>
+                class="fa-sharp icons fa-solid fa-bell text-secondary position-relative">
+                <span *ngIf="emptynot==false" class=" position-absolute top-0 start-100 translate-middle badge-ind rounded-pill bg-danger">
+                    {{notlength}}
+                    <span class="visually-hidden">unread notifications</span>
+                </span>
+            </i>
+        </a>
         <a routerLinkActive="active" routerLink="/messages"><i
                 class="fa-sharp icons fa-solid fa-comments text-secondary"></i></a>
-        <!-- <a routerLinkActive="active"><i class="fa-sharp fa-solid fa-user-group text-secondary"></i></a>
-        <a routerLinkActive="active"><i class="fa-sharp fa-solid fa-shop text-secondary"></i></a> -->
+        <a routerLinkActive="active"><i class="fa-sharp fa-solid fa-user-group text-secondary"></i></a>
+        <a routerLinkActive="active"><i class="fa-sharp fa-solid fa-shop text-secondary"></i></a>
 
     </div>
     <div class="last-section w-25">

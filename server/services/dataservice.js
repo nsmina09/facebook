@@ -126,6 +126,7 @@ addPost = (username, fullname, text, imageurl, dateofPost) => {
             });
             user.save();
             const post = db.Allpost({
+                id: Math.floor(Math.random() * 10000),
                 fullname: fullname,
                 username: username,
                 dateofPost: dateofPost,
@@ -150,6 +151,7 @@ addPost = (username, fullname, text, imageurl, dateofPost) => {
                 }]
             });
             const post = db.Allpost({
+                id: Math.floor(Math.random() * 10000),
                 fullname: fullname,
                 username: username,
                 dateofPost: dateofPost,
@@ -252,6 +254,7 @@ addFriend = (fromusername, username, date, fromuser) => {
             })
             user.save();
             const notification = db.Notification({
+                id: Math.floor(Math.random() * 40000),
                 username: username,
                 fromusername: fromuser,
                 fullname: fromusername,
@@ -463,6 +466,51 @@ alreadyFriend = (username, fullname, otheruser) => {
     })
 }
 
+addComment = (id, fullname, comment) => {
+    return db.Allpost.findOne({ id }).then(post => {
+        if (post) {
+            console.log(id);
+            post.comments.push({
+                imageurl: '',
+                fullname: fullname,
+                comment: comment,
+            })
+
+            post.save();
+            return {
+                status: true,
+                statusCode: 200,
+                message: 'comment added successfully',
+                comment: post.comments
+            }
+        } else {
+            return {
+                status: false,
+                statusCode: 400,
+                message: 'no post found'
+            }
+        }
+    })
+}
+
+getcomments = (id) => {
+    return db.Allpost.findOne({ id }).then(post => {
+        if (post) {
+            return {
+                status: true,
+                statusCode: 200,
+                comment: post.comments
+            }
+        } else {
+            return {
+                status: false,
+                statusCode: 400,
+                message: 'no post found'
+            }
+        }
+    })
+}
+
 module.exports = {
     register,
     login,
@@ -481,5 +529,7 @@ module.exports = {
     getFriends,
     addInfo,
     getInfo,
-    alreadyFriend
+    alreadyFriend,
+    addComment,
+    getcomments
 };

@@ -8,6 +8,10 @@ export class UserService {
 
    otheruser = new Subject()
    searchKey=new BehaviorSubject('');
+   notlength=new BehaviorSubject(0)
+   fullname=new BehaviorSubject('')
+   id=new BehaviorSubject('')
+   post=new BehaviorSubject({})
 
   constructor() { }
 

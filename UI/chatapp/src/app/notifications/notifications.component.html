@@ -1,6 +1,6 @@
-<div class="text-center m-5" *ngIf="notification.length==0">No notifications for you</div>
+<div class="text-center m-top" *ngIf="notification.length==0">No notifications for you</div>
 
-<div *ngFor="let not of notification">
+<div class="m-top" *ngFor="let not of notification">
     <a class="text-decoration-none text-dark" >
         <div class="each-notification">
             <div class="avatar-desc">

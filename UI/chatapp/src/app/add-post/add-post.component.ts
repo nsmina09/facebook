@@ -21,7 +21,7 @@ export class AddPostComponent implements OnInit {
     this.getTextEmitter.emit(event.target.value);
   }
   
-  processFile(imageInput: any) {
+  addImage(imageInput: any) {
     this.getImageEmitter.emit(imageInput)
   }
 
